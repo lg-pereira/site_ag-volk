@@ -8,7 +8,7 @@ export const LeadFormModal: React.FC = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    whatsapp: '',
+    phone: '',
     email: ''
   });
 
@@ -22,7 +22,7 @@ export const LeadFormModal: React.FC = () => {
     // Construct the WhatsApp message
     const message = `Olá! Me chamo ${formData.firstName} ${formData.lastName}.
 Email: ${formData.email}
-WhatsApp: ${formData.whatsapp}
+Telefone: ${formData.phone}
     
 Gostaria de solicitar uma consultoria de tráfego.`;
 
@@ -102,13 +102,13 @@ Gostaria de solicitar uma consultoria de tráfego.`;
               </div>
 
               <div>
-                <label htmlFor="whatsapp" className="block text-sm font-medium text-slate-700 mb-1">WhatsApp (com DDD)</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Telefone com DDD</label>
                 <input
                   required
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={formData.whatsapp}
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition-all"
                   placeholder="(00) 00000-0000"

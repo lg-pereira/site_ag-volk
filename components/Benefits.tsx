@@ -1,6 +1,7 @@
 import React from 'react';
 import { TrendingUp, MessageSquare, Percent } from 'lucide-react';
 import { SectionTitle } from './SectionTitle';
+import { motion } from 'framer-motion';
 
 export const Benefits: React.FC = () => {
   const benefits = [
@@ -34,7 +35,14 @@ export const Benefits: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className={`p-8 rounded-2xl ${benefit.color} border border-slate-100 hover:shadow-lg transition-all duration-300 group`}>
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`p-8 rounded-2xl ${benefit.color} border border-slate-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 group`}
+            >
               <div className="bg-white w-16 h-16 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 {benefit.icon}
               </div>
@@ -44,7 +52,7 @@ export const Benefits: React.FC = () => {
               <p className="text-slate-700 leading-relaxed">
                 {benefit.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
