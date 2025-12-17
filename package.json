@@ -1,7 +1,7 @@
 {
-  "name": "site-volk",
+  "name": "agência-volk---gestão-de-tráfego",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
