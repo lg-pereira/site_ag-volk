@@ -6,6 +6,12 @@ import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { LeadModalProvider } from './context/LeadModalContext';
 import { LeadFormModal } from './components/LeadFormModal';
 import { Home } from './pages/Home';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfUse } from './pages/TermsOfUse';
+import { GoogleAdsPage } from './pages/GoogleAdsPage';
+import { AiEmployeePage } from './pages/AiEmployeePage';
+import { TrackingPage } from './pages/TrackingPage';
+import { SalesFunnelPage } from './pages/SalesFunnelPage';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -26,7 +32,16 @@ const App: React.FC = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Novas rotas podem ser adicionadas aqui */}
+            <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
+            <Route path="/termos-uso" element={<TermsOfUse />} />
+            
+            {/* Novas Rotas */}
+            <Route path="/google-ads" element={<GoogleAdsPage />} />
+            <Route path="/funcionario-ia" element={<AiEmployeePage />} />
+            <Route path="/tracking-avancado" element={<TrackingPage />} />
+            <Route path="/funil-vendas" element={<SalesFunnelPage />} />
+
+            <Route path="*" element={<Home />} />
           </Routes>
         </Layout>
       </Router>

@@ -1,31 +1,35 @@
 import React from 'react';
 import { SectionTitle } from './SectionTitle';
 import { MapPin, MessageSquare, Clock, Filter } from 'lucide-react';
-import { useLeadModal } from '../context/LeadModalContext';
+import { useNavigate } from 'react-router-dom';
 
 export const WhyVolk: React.FC = () => {
-  const { openModal } = useLeadModal();
+  const navigate = useNavigate();
 
   const benefits = [
     {
       icon: <MapPin className="w-6 h-6 text-amber-600" />,
       title: "Dominar o mercado na sua região",
       description: "Seja a marca mais conhecida da sua cidade com campanhas altamente direcionadas.",
+      path: "/google-ads"
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-amber-600" />,
       title: "Atendimento impecável",
       description: "Seu funcionário de IA — o secretário perfeito! Faz o filtro inicial 24/7, coleta informações e organiza tudo.",
+      path: "/funcionario-ia"
     },
     {
       icon: <Clock className="w-6 h-6 text-amber-600" />,
       title: "Mais clientes em menos tempo",
       description: "Aumente seu faturamento investindo no tipo certo de anúncio para seu público comprador.",
+      path: "/tracking-avancado"
     },
     {
       icon: <Filter className="w-6 h-6 text-amber-600" />,
       title: "Funil de venda simples",
       description: "Use o poder do Instagram e do WhatsApp para criar um funil direto, descomplicado e extremamente eficaz.",
+      path: "/funil-vendas"
     }
   ];
 
@@ -47,7 +51,7 @@ export const WhyVolk: React.FC = () => {
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{benefit.title}</h3>
                 <p className="text-slate-600 mb-3 leading-relaxed">{benefit.description}</p>
                 <button 
-                  onClick={openModal}
+                  onClick={() => navigate(benefit.path)}
                   className="text-amber-600 font-semibold text-sm hover:text-amber-700 inline-flex items-center group cursor-pointer"
                 >
                   Saiba mais 
