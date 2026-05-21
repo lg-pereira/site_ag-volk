@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import { ArrowRight } from 'lucide-react';
 import { useLeadModal } from '../context/LeadModalContext';
@@ -34,8 +35,8 @@ export const Hero: React.FC = () => {
                 Quero conhecer
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" onClick={openModal}>
-                Saiba mais
+              <Button variant="outline" asChild>
+                <Link to="/resultados">Saiba mais</Link>
               </Button>
             </div>
           </div>

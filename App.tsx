@@ -12,6 +12,10 @@ import { GoogleAdsPage } from './pages/GoogleAdsPage';
 import { AiEmployeePage } from './pages/AiEmployeePage';
 import { TrackingPage } from './pages/TrackingPage';
 import { SalesFunnelPage } from './pages/SalesFunnelPage';
+import { ResultsPage } from './pages/ResultsPage';
+import { IrmaosFrainerPage } from './pages/results/IrmaosFrainerPage';
+import { GoldFitnessPage } from './pages/results/GoldFitnessPage';
+import { AltusFitnessPage } from './pages/results/AltusFitnessPage';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -40,6 +44,10 @@ const App: React.FC = () => {
             <Route path="/funcionario-ia" element={<AiEmployeePage />} />
             <Route path="/tracking-avancado" element={<TrackingPage />} />
             <Route path="/funil-vendas" element={<SalesFunnelPage />} />
+            <Route path="/resultados" element={<ResultsPage />} />
+            <Route path="/resultados/irmaos-frainer" element={<IrmaosFrainerPage />} />
+            <Route path="/resultados/gold-fitness" element={<GoldFitnessPage />} />
+            <Route path="/resultados/altus-fitness" element={<AltusFitnessPage />} />
 
             <Route path="*" element={<Home />} />
           </Routes>
